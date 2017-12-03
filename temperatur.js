@@ -27,6 +27,7 @@ function medelVarde(celler){
 }
 
 function hitta(){
+  rensa();
   var  varde = parseInt(document.getElementById("varde").value);
   var tabell = document.getElementById("temperaturtabell");
   var rader = tabell.getElementsByTagName("tr");
@@ -49,4 +50,17 @@ function harVarde(varde, celler){
     }
   }
   return harVarde;
+}
+
+function rensa() {
+  var tabell = document.getElementById("temperaturtabell");
+  var rader = tabell.getElementsByTagName("tr");
+
+  for( var i = 0; i < rader.length; i++ ){
+    rader[i].className = "";
+    var celler = rader[i].getElementsByTagName("td");
+    for (var j = 1; j < celler.length - 1; j++){
+      celler[j].className = "";
+    }
+  }
 }
